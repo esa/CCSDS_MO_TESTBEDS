@@ -49,6 +49,7 @@ import org.ccsds.moims.mo.testbed.transport.TestMessageHeader;
 import org.ccsds.moims.mo.testbed.transport.TransportInterceptor;
 import org.ccsds.moims.mo.testbed.util.LoggingBase;
 import org.ccsds.moims.mo.testbed.util.ParseHelper;
+import org.ccsds.moims.mo.testbed.util.Configuration;
 
 /**
  *
@@ -278,7 +279,7 @@ public class PatternTest
     try
     {
       LoggingBase.logMessage("PatternTest.waiting for responses");
-      retVal = monitor.cond.waitFor(10000);
+      retVal = monitor.cond.waitFor(Configuration.WAIT_TIME_OUT);
     }
     catch (InterruptedException ex)
     {
